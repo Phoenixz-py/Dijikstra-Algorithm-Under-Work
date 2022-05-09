@@ -23,9 +23,9 @@ class Graph{
         this.EdgeList.set(v, []);
     }
 
-    addEdge(v, w) {
-        this.EdgeList.get(v).push(w);
-        this.EdgeList.get(w).push(v);
+    addEdge(v, w, ae) {
+        this.EdgeList.get(v).push(w).push(ae);
+        this.EdgeList.get(w).push(v).push(ae);
     }
     printGraph()
 {
@@ -49,26 +49,23 @@ class Graph{
 }
 }
 }
+
 let g = new Graph(6)
-let vertices = [ ['A', 'B', 'C'], ['D', 'E', 'F'] ];
+let vertices = ['A', 'B', 'C', 'D', 'E', 'F'];
 
 for(let i = 0; i < vertices.length; i++){
     g.addVertex(vertices[i]);
 }
 
-// createdEdge.addEdge = addEdge()
 
-g.addEdge('A', 'B');
-g.addEdge('A', 'D');
-g.addEdge('A', 'E');
-g.addEdge('B', 'C');
-g.addEdge('D', 'E');
-g.addEdge('E', 'F');
-g.addEdge('E', 'C');
-g.addEdge('C', 'F');
+
+g.addEdge('A', 'B', 5);
+g.addEdge('A', 'D', 1);
+g.addEdge('A', 'E', 4);
+g.addEdge('B', 'C', 3);
+g.addEdge('D', 'E', 2);
+g.addEdge('E', 'F', 3);
+g.addEdge('E', 'C', 4);
+g.addEdge('C', 'F', 2);
 g.printGraph();
 
-// if(vertices[0][1] === 1){
-//     let adj = [[], []];
-
-// }
