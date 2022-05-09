@@ -22,10 +22,11 @@ class Graph{
     addVertex(v) {
         this.EdgeList.set(v, []);
     }
+//{weight:x, vertex:y} 
 
-    addEdge(v, w, ae) {
-        this.EdgeList.get(v).push(w).push(ae);
-        this.EdgeList.get(w).push(v).push(ae);
+    addEdge(v, ae, w) {
+        this.EdgeList.get({vertexi: v, weight: ae}).push(w);
+        this.EdgeList.get({vertexi: w, weight: ae}).push(v);
     }
     printGraph()
 {
@@ -51,7 +52,7 @@ class Graph{
 }
 
 let g = new Graph(6)
-let vertices = ['A', 'B', 'C', 'D', 'E', 'F'];
+let vertices = ['A' , 'B', 'C', 'D', 'E', 'F'];
 
 for(let i = 0; i < vertices.length; i++){
     g.addVertex(vertices[i]);
@@ -59,13 +60,13 @@ for(let i = 0; i < vertices.length; i++){
 
 
 
-g.addEdge('A', 'B', 5);
-g.addEdge('A', 'D', 1);
-g.addEdge('A', 'E', 4);
-g.addEdge('B', 'C', 3);
-g.addEdge('D', 'E', 2);
-g.addEdge('E', 'F', 3);
-g.addEdge('E', 'C', 4);
-g.addEdge('C', 'F', 2);
+g.addEdge('A', 3, 'B');
+g.addEdge('A', 5, 'D');
+g.addEdge('A', 6, 'E');
+g.addEdge('B', 7, 'C');
+g.addEdge('D', 4, 'E');
+g.addEdge('E', 1, 'F');
+g.addEdge('E', 2, 'C');
+g.addEdge('C', 6, 'F');
 g.printGraph();
 
