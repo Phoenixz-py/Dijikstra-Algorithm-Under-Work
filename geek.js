@@ -1,19 +1,3 @@
-import promptSync from 'prompt-sync';
-const store = promptSync({sigint: true}); 
-import chalk from 'chalk';
-
-//Storing Strings in variables
-
-const inputStringE = 'Enter edge distance ';
-const inputStringV = 'Enter vertex name ';
-
-//Stoage array to store all edges
-
-let StoreE = [];
-let StoreV = [];
-
-// Graph is nothing but group of objetcs
-
 class Graph{
     constructor(vertex){
         this.vertex = vertex;
@@ -25,8 +9,8 @@ class Graph{
 //{weight:x, vertex:y} 
 
     addEdge(v, ae, w) {
-        this.EdgeList.get({vertexi: v, weight: ae}).push(w);
-        this.EdgeList.get({vertexi: w, weight: ae}).push(v);
+        this.EdgeList.get(v).push(w);
+        this.EdgeList.get(w).push(v);
     }
     printGraph()
 {
