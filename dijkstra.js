@@ -14,18 +14,18 @@ const connect = 'Enter the weight connecting the very first input and last verte
 
 //Stoage array to store all edges
 
-let Edge1 = prompt(chalk.magenta(mainSourceInput));
-let wOfedge12 = prompt(chalk.cyan(inputWeight));
+const Edge1 = prompt(chalk.magenta(mainSourceInput));
+const wOfedge12 = prompt(chalk.cyan(inputWeight));
 
-let Edge2 = prompt(chalk.magenta(inputEndVertex));
-let wOfedge23 = prompt(chalk.cyan(inputWeight));
-let Edge3 = prompt(inputStartingStarting);
+const Edge2 = prompt(chalk.magenta(inputEndVertex));
+const wOfedge23 = prompt(chalk.cyan(inputWeight));
+const Edge3 = prompt(inputStartingStarting);
 
-let wOfedge34 = prompt(chalk.cyan(inputWeight));
+const wOfedge34 = prompt(chalk.cyan(inputWeight));
 
-let Edge4 = prompt(chalk.magenta(inputEndVertex));
+const Edge4 = prompt(chalk.magenta(inputEndVertex));
 // let wOfedge45 = prompt(chalk.cyan(inputWeight));
-let wofedge41 = prompt(chalk.underline(chalk.green(connect)));
+const wofedge41 = prompt(chalk.underline(chalk.green(connect)));
 
 // let Edge5 = prompt(inputStartingStarting);
 // let wOfedge56 = prompt(chalk.cyan(inputWeight));
@@ -33,7 +33,7 @@ let wofedge41 = prompt(chalk.underline(chalk.green(connect)));
 // let Edge6 = prompt(chalk.magenta(inputEndVertex));
 // let wOfedge61 = prompt(chalk.cyan(inputWeight));
 
-let Destination = prompt(goTo)
+const Destination = prompt(goTo)
 
 // Graph is nothing but group of objetcs
 
@@ -59,25 +59,25 @@ class EDGE{
 // }
 
 
-let edges = [new EDGE(Edge1, Edge2, wOfedge12), new EDGE(Edge2, Edge3, wOfedge23), new EDGE(Edge3, Edge4, wOfedge34), new EDGE(Edge4, Edge1, wofedge41)];
+const edge = [new EDGE(Edge1, Edge2, wOfedge12), new EDGE(Edge2, Edge3, wOfedge23), new EDGE(Edge3, Edge4, wOfedge34), new EDGE(Edge4, Edge1, wofedge41)];
 // let edges = [new Edge(Edge1, Edge2, wOfedge12), new Edge(Edge2, Edge3, wOfedge23), new Edge(Edge3, Edge4, wOfedge34), new Edge(Edge4, Edge5, wOfedge45), new Edge(Edge5, Edge6, wOfedge56), new Edge(Edge6, Edge1, wOfedge61)];
 
 // const startPoint = Edge1
 // // const endPoint = Edge6
 
-let startOnEdge = edges.filter(e => e.startVertex == Edge1);
+const startOnEdge = edge.filter(e => e.startVertex == Edge1);
 
 let controlEdge = '';
 
 let keyEdgeManipulator = 100;
 
-for(edges of startOnEdge){
+for(const edge of startOnEdge){
     
-    if(edges.weight < keyEdgeManipulator){
+    if(edge.weight < keyEdgeManipulator){
         
-        keyEdgeManipulator = edges.weight;
-        controlEdge = edges;
+        keyEdgeManipulator = edge.weight;
+        controlEdge = edge;
     }
 }
 
-console.table(edges)
+console.log(edge);
