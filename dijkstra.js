@@ -11,6 +11,7 @@ const inputEndVertex = 'Enter the end vertex: ';
 const inputWeight = 'Enter the weight between them: ';
 const goTo = 'Where do you want to go: ';
 const connect = 'Enter the weight connecting the very first input and last vertex input : '
+const midConnect='Enter the weight to create a diagonal like connection between the first Edge and the third Edge: '
 
 //Stoage array to store all edges
 
@@ -34,6 +35,8 @@ const wofedge41 = Number(prompt(chalk.underline(chalk.green(connect))));
 // let Edge6 = prompt(chalk.magenta(inputEndVertex));
 // let wOfedge61 = prompt(chalk.cyan(inputWeight));
 
+const wofedge13 = Number(prompt(chalk.cyan(midConnect)))
+
 let Destination = prompt(goTo)
 
 // Graph is nothing but group of objetcs
@@ -51,7 +54,7 @@ class EDGE{
 }
 
 
-const edge = [new EDGE(Edge1, Edge2, wOfedge12), new EDGE(Edge2, Edge3, wOfedge23), new EDGE(Edge3, Edge4, wOfedge34), new EDGE(Edge4, Edge1, wofedge41)];
+const edge = [new EDGE(Edge1, Edge2, wOfedge12), new EDGE(Edge2, Edge3, wOfedge23), new EDGE(Edge3, Edge4, wOfedge34), new EDGE(Edge4, Edge1, wofedge41), new EDGE(Edge1, Edge3, wofedge13)];
 // let edges = [new Edge(Edge1, Edge2, wOfedge12), new Edge(Edge2, Edge3, wOfedge23), new Edge(Edge3, Edge4, wOfedge34), new Edge(Edge4, Edge5, wOfedge45), new Edge(Edge5, Edge6, wOfedge56), new Edge(Edge6, Edge1, wOfedge61)];
 
 // const startPoint = Edge1
@@ -73,13 +76,37 @@ for(const edge of startOnEdge){
 }
 
 
-let calc = (array) => {
-    array.forEach(element => {
+let calc = (edge) => {
+    edge.forEach(_element => {
         
-            let edge[0] = 0;
-            
+          EDGE.Edge1 = 0;
+
+          EDGE.Edge2 = EDGE.Edge1 + EDGE.wOfedge12;
+          EDGE.Edge3 = 999;
+          EDGE.Edge4 = EDGE.Edge1 + EDGE.wofedge41;
+
+          let B = () => {
+
+            EDGE.Edge3 = EDGE.Edge2 + EDGE.wOfedge23;
+            EDGE.Edge4 = 999;
+
+
+          }
+
+          let C = () => {
+
+            EDGE.Edge4 = EDGE.Edge3 + EDGE.wOfedge23
+
+
+
+          }
+          B()
+          
+
+
     });
 }
 
+calc(edge)
 // console.table(edge);
 
