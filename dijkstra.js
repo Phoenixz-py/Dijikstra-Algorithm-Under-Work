@@ -95,18 +95,33 @@ let calc = (edge) => {
 
           let C = () => {
 
-            EDGE.Edge4 = EDGE.Edge3 + EDGE.wOfedge23
+            EDGE.Edge4 = EDGE.Edge3 + EDGE.wOfedge23;
 
 
 
           }
           B()
-          
+          C()
+
 
 
     });
 }
 
-calc(edge)
+calc(edge);
+
+//================================WRT TO C================================================================
+
+
+if(EDGE.Edge2 + EDGE.Edge3 < EDGE.wofedge13){
+    
+    console.log(EDGE.Edge1 + ' -> ' + EDGE.Edge2 + ' -> ' + Destination)
+}
+
+else if(EDGE.Edge2 + EDGE.Edge3 > EDGE.wofedge13){
+
+    console.log(EDGE.Edge1 + '-> ' + Destination);
+}
+
 // console.table(edge);
 
