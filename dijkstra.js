@@ -76,36 +76,56 @@ for(const edge of startOnEdge){
 }
 
 
-let calc = (edge) => {
-    edge.forEach(_element => {
+let calc = () => {
+  
+          const powerOfEdge1 = 0;
+
+          let powerOfEdge2 = powerOfEdge1 + wOfedge12;
+
+          let  powerOfEdge3 = 999;
+
+          let powerOfEdge4 = 999;
+
+           powerOfEdge4 = powerOfEdge1 + wofedge41;
         
-          EDGE.Edge1 = 0;
+           powerOfEdge3 = powerOfEdge2 + wOfedge23;
 
-          EDGE.Edge2 = EDGE.Edge1 + EDGE.wOfedge12;
-          EDGE.Edge3 = 999;
-          EDGE.Edge4 = EDGE.Edge1 + EDGE.wofedge41;
+          
 
-          let B = () => {
+// TESTING VALUES
 
-            EDGE.Edge3 = EDGE.Edge2 + EDGE.wOfedge23;
-            EDGE.Edge4 = 999;
+console.log(powerOfEdge1) // right
+
+console.log(powerOfEdge2)
+
+console.log(powerOfEdge3)
+
+console.log(powerOfEdge4)
+
+console.table(edge)
+
+    if(powerOfEdge1 + powerOfEdge2 > powerOfEdge3){
+        return console.log(Edge1 + ' -> ' + Edge2 + ' -> ' + Destination)
+
+    } 
+
+     else if(powerOfEdge1 + powerOfEdge2 < powerOfEdge3)
+     {
+        return  console.log(Edge1 + '-> ' + Destination);
+     }
+
+     else if(wofedge13 < powerOfEdge1 + powerOfEdge2){
+
+        return console.log(Edge1 + ' ->' + Edge3)
+     }
+        else{
+
+           return console.log("Just Switch case works")
+        }
+        
 
 
-          }
 
-          let C = () => {
-
-            EDGE.Edge4 = EDGE.Edge3 + EDGE.wOfedge23;
-
-
-
-          }
-          B()
-          C()
-
-
-
-    });
 }
 
 calc(edge);
@@ -113,15 +133,4 @@ calc(edge);
 //================================WRT TO C================================================================
 
 
-if(EDGE.Edge2 + EDGE.Edge3 < EDGE.wofedge13){
-    
-    console.log(EDGE.Edge1 + ' -> ' + EDGE.Edge2 + ' -> ' + Destination)
-}
-
-else if(EDGE.Edge2 + EDGE.Edge3 > EDGE.wofedge13){
-
-    console.log(EDGE.Edge1 + '-> ' + Destination);
-}
-
 // console.table(edge);
-
